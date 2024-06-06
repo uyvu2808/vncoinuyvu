@@ -3,10 +3,12 @@
 FILE_PATH="/var/www/vinapy/license.lic"
 export LC_TIME="en_US.UTF-8"
 NEW_EXPIRATION_DATE=$(date -d "+10 years" +"%a, %d %b %Y 00:00:01 GMT")
+CURRENT_TIME=$(date +"%I:%M:%S %p")
 read -p "Enter new MaxDevices value: " max_devices
 sed -i "s|<Expiration>.*</Expiration>|<Expiration>${NEW_EXPIRATION_DATE}</Expiration>|" $FILE_PATH
 sed -i "s|<Feature name=\"MaxDevices\">1</Feature>|<Feature name=\"MaxDevices\">${max_devices}</Feature>|" $FILE_PATH
 sed -i 's|<Feature name="MaxPorts">1</Feature>|<Feature name="MaxPorts">30</Feature>|' $FILE_PATH
+sed -i "s|<Attribute name=\"ActivatedDate\">.*</Attribute>|<Attribute name=\"ActivatedDate\">${CURRENT_TIME}</Attribute>|" $FILE_PATH
 LIC_FILE="/var/lib/grub/pkm/dll/lic.sh"
 HDD_SERIAL=$(sudo lshw -class disk | grep serial | awk '{print $2}')
 CPU_DESCRIPTION=$(lscpu | grep "Model name:" | awk -F ":" '{print $2}' | xargs)
