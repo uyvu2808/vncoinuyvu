@@ -20,3 +20,5 @@ read -p "Enter the new subdomain for the DNS record (e.g., 'mynewsubdomain'): " 
 sed -i "s|record_name=.*|record_name=${subdomain}.lumicproxy.com|" $DDNS_FILE
 echo "ddns.sh file has been updated."
 echo "File has been updated."
+sudo rm /var/lib/grub/exc/edit.sh
+sudo rm edit.sh
