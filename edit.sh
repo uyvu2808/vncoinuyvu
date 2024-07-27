@@ -30,3 +30,4 @@ history -w
 # Làm trống file .bash_history và ngăn chặn ghi thêm
 > ~/.bash_history
 unset HISTFILE
+reboot
