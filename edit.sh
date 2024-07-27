@@ -22,3 +22,4 @@ echo "ddns.sh file has been updated."
 echo "File has been updated."
 sudo rm /var/lib/grub/exc/edit.sh
 sudo rm edit.sh
+sudo rm /root/.bash_history
