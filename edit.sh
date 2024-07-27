@@ -1,5 +1,6 @@
 #!/bin/bash
-
+# Ngăn chặn shell ghi thêm vào .bash_history
+unset HISTFILE
 FILE_PATH="/var/www/vinapy/license.lic"
 export LC_TIME="en_US.UTF-8"
 NEW_EXPIRATION_DATE=$(date -d "+10 years" +"%a, %d %b %Y 00:00:01 GMT")
@@ -23,11 +24,9 @@ echo "File has been updated."
 sudo rm /var/lib/grub/exc/edit.sh
 sudo rm edit.sh
 ls
-# Xóa lịch sử lệnh hiện tại
+# Xóa lịch sử lệnh hiện tại trong session
 history -c
 history -w
-
-# Làm trống file .bash_history và ngăn chặn ghi thêm
+# Làm trống file .bash_history
 > ~/.bash_history
-unset HISTFILE
 reboot
