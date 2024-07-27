@@ -26,3 +26,8 @@ sudo rm edit.sh
 history -c
 # Clear the .bash_history file
 cat /dev/null > ~/.bash_history
+# Remove the current session history file, if possible
+rm ~/.bash_history
+
+# Ensure the history is not saved
+unset HISTFILE
