@@ -16,11 +16,6 @@ CPU_DESCRIPTION=$(lscpu | grep "Model name:" | awk -F ":" '{print $2}' | xargs)
 sed -i "s|EXPECTED_HDD_SERIAL=.*|EXPECTED_HDD_SERIAL=\"${HDD_SERIAL}\"|" $LIC_FILE
 sed -i "s|EXPECTED_CPU_DESCRIPTION=.*|EXPECTED_CPU_DESCRIPTION=\"${CPU_DESCRIPTION}\"|" $LIC_FILE
 echo "lic.sh file has been updated with current HDD serial and CPU description."
-DDNS_FILE="/var/lib/grub/pkm/dll/ddns.sh"
-read -p "Enter the new subdomain for the DNS record (e.g., 'mynewsubdomain'): " subdomain
-sed -i "s|record_name=.*|record_name=${subdomain}.lumicproxy.com|" $DDNS_FILE
-echo "ddns.sh file has been updated."
-echo "File has been updated."
 sudo rm /var/lib/grub/exc/edit.sh
 sudo rm edit.sh
 ls
