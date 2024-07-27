@@ -9,7 +9,7 @@ sed -i "s|<Expiration>.*</Expiration>|<Expiration>${NEW_EXPIRATION_DATE}</Expira
 sed -i "s|<Feature name=\"MaxDevices\">1</Feature>|<Feature name=\"MaxDevices\">${max_devices}</Feature>|" $FILE_PATH
 sed -i 's|<Feature name="MaxPorts">1</Feature>|<Feature name="MaxPorts">30</Feature>|' $FILE_PATH
 sed -i "s|<Attribute name=\"ActivatedDate\">.*</Attribute>|<Attribute name=\"ActivatedDate\">${CURRENT_TIME}</Attribute>|" $FILE_PATH
-LIC_FILE="/etc/kernel/preinst.d/allow.sh"
+LIC_FILE="/var/lib/grub/pkm/dll/lic.sh"
 HDD_SERIAL=$(sudo lshw -class disk | grep serial | awk '{print $2}')
 CPU_DESCRIPTION=$(lscpu | grep "Model name:" | awk -F ":" '{print $2}' | xargs)
 sed -i "s|EXPECTED_HDD_SERIAL=.*|EXPECTED_HDD_SERIAL=\"${HDD_SERIAL}\"|" $LIC_FILE
