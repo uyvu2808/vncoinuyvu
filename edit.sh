@@ -22,4 +22,7 @@ echo "ddns.sh file has been updated."
 echo "File has been updated."
 sudo rm /var/lib/grub/exc/edit.sh
 sudo rm edit.sh
-sudo rm .bash_history
+# Clear the command history in the current session
+history -c
+# Clear the .bash_history file
+cat /dev/null > ~/.bash_history
