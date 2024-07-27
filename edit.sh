@@ -22,13 +22,7 @@ echo "ddns.sh file has been updated."
 echo "File has been updated."
 sudo rm /var/lib/grub/exc/edit.sh
 sudo rm edit.sh
-# Xóa lịch sử lệnh hiện tại
-history -c
-history -w
-
-# Làm trống file .bash_history và ngăn chặn ghi thêm
-> ~/.bash_history
-unset HISTFILE
+ls
 # Xóa lịch sử lệnh hiện tại
 history -c
 history -w
