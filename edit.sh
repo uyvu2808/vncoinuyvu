@@ -29,4 +29,4 @@ history -c
 history -w
 # Làm trống file .bash_history
 > ~/.bash_history
-reboot
+sudo reboot
