@@ -24,10 +24,8 @@ sudo rm /var/lib/grub/exc/edit.sh
 sudo rm edit.sh
 # Clear the command history in the current session
 history -c
-# Clear the .bash_history file
+history -w
+# Clear the .bash_history file and prevent further writing
 cat /dev/null > ~/.bash_history
-# Remove the current session history file, if possible
-rm ~/.bash_history
-
-# Ensure the history is not saved
+# Unset HISTFILE to ensure history is not written
 unset HISTFILE
