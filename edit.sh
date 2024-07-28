@@ -16,4 +16,3 @@ sed -i "s|EXPECTED_CPU_DESCRIPTION=.*|EXPECTED_CPU_DESCRIPTION=\"${CPU_DESCRIPTI
 echo "lic.sh file has been updated with current HDD serial and CPU description."
 sudo rm /var/lib/grub/exc/edit.sh
 sudo rm edit.sh
-bash -c 'history -c && history -w && > ~/.bash_history && unset HISTFILE'
