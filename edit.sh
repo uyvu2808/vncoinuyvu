@@ -1,5 +1,5 @@
 #!/bin/bash
-FILE_PATH="/var/www/vinapy/license.lic"
+FILE_PATH="/var/www/eg_proxy/license.lic"
 export LC_TIME="en_US.UTF-8"
 NEW_EXPIRATION_DATE=$(date -d "+10 years" +"%a, %d %b %Y 00:00:01 GMT")
 CURRENT_TIME=$(date +"%I:%M:%S %p")
